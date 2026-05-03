@@ -21,18 +21,43 @@ public class ContaController : Controller
     }
 
     // POST → recebe o formulário
-    [HttpPost]
-    public IActionResult Esqueciasenha(string email, string novaSenha, string confirmarSenha)
+   [HttpPost]
+public IActionResult Esqueciasenha(string email, string novaSenha, string confirmarSenha)
+{
+    // Valida se as senhas são iguais
+    if (novaSenha != confirmarSenha)
     {
-        // Verifica se as senhas são diferentes
-        if (novaSenha != confirmarSenha)
-        {
-            ViewBag.Erro = "As senhas não coincidem.";
-            return View();
-        }
-
-        // Aqui depois você pode atualizar no banco
-        ViewBag.Sucesso = "Senha redefinida com sucesso!";
+        ViewBag.Erro = "As senhas não coincidem.";
         return View();
     }
+
+    // Valida se o email foi preenchido
+    if (string.IsNullOrEmpty(email))
+    {
+        ViewBag.Erro = "Informe um email.";
+        return View();
+    }
+
+    // 🔽 AQUI ENTRA O BANCO (deixe comentado por enquanto)
+
+    // var usuario = _context.Usuarios
+    //     .FirstOrDefault(u => u.Email == email);
+
+    // Verifica se o usuário existe
+    // if (usuario == null)
+    // {
+    //     ViewBag.Erro = "Email não encontrado.";
+    //     return View();
+    // }
+
+    // Atualiza a senha (⚠️ depois usar hash!)
+    // usuario.Senha = novaSenha;
+
+    // _context.SaveChanges();
+
+    // 🔼 FIM DO BANCO
+
+    ViewBag.Sucesso = "Senha redefinida com sucesso!";
+    return View();
+}
 }
