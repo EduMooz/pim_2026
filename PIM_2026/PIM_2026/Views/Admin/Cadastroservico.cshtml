@@ -1,0 +1,29 @@
+@model PIM_2026.Models.Servico
+
+<h2>Cadastrar Serviço</h2>
+
+<!--Verificar depois qual o controle esta integrado com o banco de dados para cadastrar os serviços e o button, para quando clicar em salvar alem de enviar para o banco de dados, ir para a tela SalvarServico.cshtml-->
+<form asp-action="ServicoController" method="post">
+
+    <div>
+        <label>Procedimento</label>
+        <input type="text" asp-for="Nome" class="form-control" />
+    </div>
+
+    <div>
+        <label>Preço</label>
+        <input type="number" asp-for="Preco" step="0.01" class="form-control" />
+    </div>
+
+    <div>
+        <label>Duração</label>
+        <input type="time" asp-for="Duracao" class="form-control" />
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+
+    <a asp-action="Dashboard" class="btn btn-secondary">Cancelar</a>
+
+</form>

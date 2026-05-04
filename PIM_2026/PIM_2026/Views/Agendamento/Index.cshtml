@@ -57,94 +57,12 @@
 
             <!-- Botões -->
             <div class="d-flex gap-3">
-                <button type="button"
-                        class="btn btn-success"
-                        onclick="abrirModal()">
-                    Confirmar Agendamento
-                </button>
+                <button type="button" class="btn btn-success"">Confirmar Agendamento</button>
 
-                <button type="reset" class="btn btn-outline-secondary">
-                    Cancelar
-                </button>
+                <!--Alterar para quando clicar em cancelar nao enviar para o banco de dados e voltar para a tela inicial-->
+                <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
             </div>
 
         </form>
     </div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalAgendamento" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title">Agendamento Confirmado</h5>
-
-                <button type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal">
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <p>Seu agendamento foi realizado com sucesso.</p>
-
-                <hr>
-
-                <p>
-                    <strong>Serviço:</strong>
-                    <span id="resumoServico"></span>
-                </p>
-
-                <p>
-                    <strong>Data:</strong>
-                    <span id="resumoData"></span>
-                </p>
-
-                <p>
-                    <strong>Horário:</strong>
-                    <span id="resumoHorario"></span>
-                </p>
-            </div>
-
-            <div class="modal-footer">
-                <a asp-controller="Agendamento"
-                       asp-action="MeusAgendamentos"
-                       class="btn btn-dark">
-                    Meus Agendamentos
-                </a>
-
-                <button type="button"
-                        class="btn btn-outline-secondary"
-                        data-bs-dismiss="modal">
-                    Fechar
-                </button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<script>
-    function abrirModal() {
-
-        let servico = document.getElementById("servico").value;
-        let data = document.getElementById("data").value;
-        let horario = document.getElementById("horario").value;
-
-        if (servico === "" || data === "" || horario === "") {
-            alert("Preencha todos os campos antes de continuar.");
-            return;
-        }
-
-        document.getElementById("resumoServico").innerText = servico;
-        document.getElementById("resumoData").innerText = data;
-        document.getElementById("resumoHorario").innerText = horario;
-
-        let modal = new bootstrap.Modal(
-            document.getElementById("modalAgendamento")
-        );
-
-        modal.show();
-    }
-</script>

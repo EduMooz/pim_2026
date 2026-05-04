@@ -26,6 +26,12 @@ namespace PIM_2026.Controllers
             //     .ThenBy(a => a.Horario)
             //     .ToList();
 
+
+            //Adicionei este codigo somente para ser possivel visualizar a pagina, quando tiver o banco de dados integrado precisa excluir - Carlos
+            ViewBag.TotalClientes = 0;
+
+            ViewBag.ProximosAgendamentos = new List<Agendamento>();
+
             return View();
         }
 
@@ -53,6 +59,11 @@ namespace PIM_2026.Controllers
             // }
 
             return RedirectToAction("Dashboard");
+        }
+
+        public IActionResult Cadastroservico()
+        {
+            return View();
         }
     }
 }
