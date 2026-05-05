@@ -1,6 +1,6 @@
 namespace PIM_2026.Models
 {
-    public class Servico
+    public class Servicos
     {
         public int Idservico { get; set; }
         public string Nome { get; set; }
