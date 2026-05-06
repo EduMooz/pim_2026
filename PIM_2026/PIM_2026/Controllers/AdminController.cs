@@ -65,5 +65,15 @@ namespace PIM_2026.Controllers
         {
             return View();
         }
+
+        public IActionResult Horarios()
+        {
+            return View();
+        }
+
+        public IActionResult Listarservico()
+        {
+            return View();
+        }
     }
 }

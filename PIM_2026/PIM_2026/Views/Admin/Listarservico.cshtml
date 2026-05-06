@@ -1,0 +1,73 @@
+@model IEnumerable<PIM_2026.Models.Servicos>
+
+@{
+    ViewData["Title"] = "Lista de Serviços";
+}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">Serviços Cadastrados</h2>
+
+    <!-- Mensagem de sucesso no cadastro de serviço-->
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Sucesso"]
+        </div>
+    }
+
+    <!-- Botão para cadastrar o serviço-->
+    <div class="mb-3">
+        <a asp-action="Cadastroservico" class="btn btn-primary">
+            + Novo Serviço
+        </a>
+    </div>
+
+    <!-- Tabela com os serviços cadastrados-->
+    <div class="card shadow">
+        <div class="card-body">
+
+            <table class="table table-hover table-striped align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Duração</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var servico in Model)
+                        {
+                            <tr>
+                                <td>@servico.Nome</td>
+                                <td>R$ @servico.Preco.ToString("F2")</td>
+                                <td>@servico.Duracao minutos</td>
+
+                                <td class="text-center">
+                                    <!-- Editar -->
+                                    <a asp-action="EditarServico" asp-route-id="@servico.Idservico" class="btn btn-warning btn-sm">Editar</a>
+
+                                    <!-- Excluir -->
+                                    <a asp-action="ExcluirServico" asp-route-id="@servico.Idservico" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">
+                                Nenhum serviço cadastrado.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

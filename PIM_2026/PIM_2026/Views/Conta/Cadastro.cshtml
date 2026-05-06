@@ -1,3 +1,5 @@
+@model PIM_2026.Models.Cliente
+
 @{
     ViewData["Title"] = "Login";
 }
@@ -11,16 +13,16 @@
         <!-- Abas -->
         <ul class="nav nav-tabs">
 
-            <!-- Login NÃO ativo -->
+            <!-- Login ATIVO -->
             <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#login">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#login">
                     Login
                 </button>
             </li>
 
-            <!-- Cadastro ATIVO -->
+            <!-- Cadastro NÃO ATIVO -->
             <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cadastro">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cadastro">
                     Cadastro
                 </button>
             </li>
@@ -29,47 +31,54 @@
 
         <div class="tab-content mt-3">
 
-            <!-- LOGIN escondido -->
-            <div class="tab-pane fade" id="login">
+            <div class="tab-pane fade show active" id="login">
 
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control">
-                </div>
+                <!--Verificar action para fazer o login-->
+                <form asp-controller="Conta" asp-action="" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" asp-for="Email" class="form-control" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Senha</label>
-                    <input type="password" class="form-control">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" asp-for="Senha" class="form-control" required>
+                    </div>
 
-                <button class="btn btn-primary w-100">Entrar</button>
+                    <button class="btn btn-primary w-100">Entrar</button>
 
-                <div class="text-center mt-2">
-                    <a asp-controller="Conta" asp-action="Esqueciasenha">Esqueci minha senha</a>
-                </div>
-
+                    <div class="text-center mt-2">
+                        <a asp-controller="Conta" asp-action="Esqueciasenha">Esqueci minha senha</a>
+                    </div>
+                </form>
             </div>
 
-            <!-- CADASTRO VISÍVEL -->
-            <div class="tab-pane fade show active" id="cadastro">
+            <div class="tab-pane fade" id="cadastro">
 
-                <div class="mb-3">
-                    <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Digite seu nome">
-                </div>
+                <!--Verificar action para cadastrar-->
+                <form asp-controller="Conta" asp-action="" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite seu nome" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" placeholder="Digite seu email">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" asp-for="Email" class="form-control" placeholder="Digite seu email" required>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Senha</label>
-                    <input type="password" class="form-control" placeholder="Digite sua senha">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Senha</label>
+                        <input type="password" asp-for="Senha" class="form-control" placeholder="Digite sua senha" required>
+                    </div>
 
-                <button class="btn btn-success w-100">Cadastrar</button>
+                    <div class="mb-3">
+                        <label class="form-label">Telefone</label>
+                        <input type="text" asp-for="Telefone" class="form-control" placeholder="Digite seu telefone" required>
+                    </div>
 
+                    <button class="btn btn-success w-100">Cadastrar</button>
+                </form>
             </div>
 
         </div>
