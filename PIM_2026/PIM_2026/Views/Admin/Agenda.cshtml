@@ -1,0 +1,80 @@
+@{
+    ViewData["Title"] = "Agenda";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+
+<div class="container mt-4">
+    <h2>Agenda Completa</h2>
+
+    <div id="calendar"></div>
+</div>
+
+<!-- MODAL DETALHES -->
+<div class="modal fade" id="modalDetalhes" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content p-3">
+
+            <h5>Detalhes do Agendamento</h5>
+
+            <div id="infoAgendamento"></div>
+
+            <button id="btnConcluir" class="btn btn-success mt-3">
+                Marcar como concluído
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+    var calendarEl = document.getElementById('calendar');
+    var agendamentoSelecionadoId = null;
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    locale: 'pt-br',
+
+    events: '/Agenda/GetEventos',
+
+    eventClick: function(info) {
+
+    agendamentoSelecionadoId = info.event.id;
+
+    fetch('/Agenda/Detalhes/' + agendamentoSelecionadoId)
+    .then(res => res.json())
+    .then(data => {
+
+    document.getElementById('infoAgendamento').innerHTML =
+    `<p><strong>Cliente:</strong> ${data.cliente}</p>
+    <p><strong>Serviço:</strong> ${data.servico}</p>
+    <p><strong>Data:</strong> ${data.dataHora}</p>
+    <p><strong>Status:</strong> ${data.status}</p>`;
+
+    var modal = new bootstrap.Modal(document.getElementById('modalDetalhes'));
+    modal.show();
+    });
+    }
+    });
+
+    calendar.render();
+
+    // botão concluir
+    document.getElementById("btnConcluir").addEventListener("click", function () {
+
+    fetch('/Agenda/Concluir', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: agendamentoSelecionadoId })
+    })
+    .then(() => {
+    location.reload();
+    });
+
+    });
+
+    });
+</script>

@@ -14,3 +14,7 @@ namespace PIM_2026.Models
 
 
 }
+
+
+
+//Não seria melhor juntar este model com o Horariotrabalho? Pois no cshtml não é possivel puxar de dois models, e como os dois se complementam, acho que seria melhor
