@@ -32,12 +32,34 @@
                         </li>
                     </ul>
 
-                    <!-- Botão da direita -->
+                    <!-- Botão de login (quando o usuario logar, ficara salvo) -->
                     <div class="d-flex">
-                        <a class="btn btn-rosa" asp-area="" asp-controller="Conta" asp-action="Cadastro">Entrar
-                        </a>
-                    </div>
+                        @{
+                            var nome = Context.Session.GetString("UsuarioNome");
+                            var tipo = Context.Session.GetString("TipoUsuario");
+                        }
 
+                            @if (string.IsNullOrEmpty(nome))
+                            {
+                                <a class="btn btn-rosa" asp-area="" asp-controller="Conta" asp-action="Login">Entrar</a>
+                            }
+                           else{
+                               <div class="dropdown">
+                                   <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">@nome</button>
+                                   <ul class="dropdown-menu dropdown-menu-end">
+                                        @if (tipo == "Admin")
+                                        {
+                                            <li>
+                                                <a class="dropdown-item" href="/Admin/Dashboard">Dashboard</a>
+                                            </li>
+                                        }
+                                        <li>
+                                            <a class="dropdown-item" href="/Conta/Logout">Sair</a>
+                                        </li>
+                                   </ul>
+                               </div>
+                           }
+                    </div>
                 </div>
             </div>
         </nav>

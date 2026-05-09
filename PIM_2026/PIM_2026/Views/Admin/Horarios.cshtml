@@ -1,59 +1,68 @@
-@model List<PIM_2026.Models.Horariotrabalho>
+@{
+    ViewData["Title"] = "Controle de Horários";
+}
 
 <h2>Controle de Horários</h2>
 
 <a class="btn btn-success mb-3" asp-action="Criar">
-    + Definir Horário
+    Adicionar Horário
 </a>
 
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Data</th>
-            <th>Início</th>
-            <th>Fim</th>
+            <th>Dia</th>
+            <th>Horário</th>
             <th>Status</th>
             <th>Ações</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach (var h in Model)
-        {
-            <tr>
-                <td>@h.Diasemana.ToString("dd/MM/yyyy")</td>
-                <td>@h.Idhorario</td>
+        <tr>
+            <td>Segunda-feira</td>
+            <td>08:00 às 18:00</td>
 
-                <td>
-                    @if (h.Idbloqueio)
-                    {
-                        <span class="badge bg-danger">Bloqueado</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-success">Livre</span>
-                    }
-                </td>
+            <td>
+                <span class="badge bg-success">
+                    Livre
+                </span>
+            </td>
 
-                <td>
-                    @if (!h.Bloqueado)
-                    {
-                        <a class="btn btn-warning btn-sm"
-                               asp-action="Bloquear"
-                               asp-route-id="@h.Id">
-                            Bloquear
-                        </a>
-                    }
-                    else
-                    {
-                        <a class="btn btn-success btn-sm"
-                               asp-action="Liberar"
-                               asp-route-id="@h.Id">
-                            Liberar
-                        </a>
-                    }
-                </td>
-            </tr>
-        }
+            <td>
+                <a class="btn btn-warning btn-sm">Bloquear</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Terça-feira</td>
+            <td>09:00 às 17:00</td>
+
+            <td>
+                <span class="badge bg-danger">
+                    Bloqueado
+                </span>
+            </td>
+
+            <td>
+                <a class="btn btn-success btn-sm">Liberar</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Quarta-feira</td>
+            <td>10:00 às 19:00</td>
+
+            <td>
+                <span class="badge bg-success">
+                    Livre
+                </span>
+            </td>
+
+            <td>
+                <a class="btn btn-warning btn-sm">Bloquear</a>
+            </td>
+        </tr>
+
     </tbody>
 </table>

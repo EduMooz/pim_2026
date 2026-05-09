@@ -1,23 +1,17 @@
-@model PIM_2026.Models.Agendamento
+@{
+    ViewData["Title"] = "Confirmação";
+}
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow p-5 text-center" style="max-width: 500px;">
 
-        <h2 class="text-success mb-3">✔ Agendamento Confirmado!</h2>
+        <h2 class="text-success mb-3">Agendamento Confirmado!</h2>
 
-        <p class="mb-4">
-            Seu agendamento foi realizado com sucesso.
-        </p>
+        <p class="mb-4">Seu agendamento foi realizado com sucesso.</p>
 
-        <hr />
-
-        @*
-        <p><strong>Cliente:</strong> @Model.Cliente.Nome</p>
-        <p><strong>Serviço:</strong> @Model.Servico.Nome</p>
-        <p><strong>Data:</strong> @Model.Data.ToString("dd/MM/yyyy HH:mm")</p>
-
-        <a href="/" class="btn btn-primary mt-3">Voltar para o início</a>
-        *@
-
+        <a asp-action="Meusagendamentos" class="btn btn-primary mt-3">Ir para meus agendamentos</a>
+        <br />
+        <a asp-action="Index" class="btn btn-outline-warning">Novo agendamento</a>
+        
     </div>
 </div>

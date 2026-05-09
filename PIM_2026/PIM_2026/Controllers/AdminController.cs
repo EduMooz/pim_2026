@@ -80,5 +80,10 @@ namespace PIM_2026.Controllers
         {
             return View();
         }
+
+        public IActionResult Salvarservico()
+        {
+            return View();
+        }
     }
 }

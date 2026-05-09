@@ -8,9 +8,7 @@
             <div class="card shadow-lg p-4 rounded-4">
 
                 <h3 class="text-center mb-3">Redefinir senha</h3>
-                <p class="text-muted text-center mb-4">
-                    Digite seu email e a nova senha
-                </p>
+                <p class="text-muted text-center mb-4">Digite seu email e a nova senha</p>
 
                 @if (ViewBag.Erro != null)
                 {
@@ -26,7 +24,47 @@
                     </div>
                 }
 
-                <form method="post">
+                <form action="/Conta/Login" method="post">
+
+                    @if (ViewBag.Erro != null)
+                    {
+                        <div class="alert alert-danger text-center">
+                            @ViewBag.Erro
+                        </div>
+                    }
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Nova senha</label>
+                        <input type="password" name="senha" class="form-control" required>
+                    </div>
+
+                    <!--Verificar-->
+                    <div class="mb-3">
+                        <label>Digite novamente a nova senha</label>
+                        <input type="password" name="senha" class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Entrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--
+    <form method="post">
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" placeholder="Digite seu email" required>
@@ -55,8 +93,4 @@
                         </a>
                     </div>
                 </form>
-
-            </div>
-        </div>
-    </div>
-</div>
+-->
