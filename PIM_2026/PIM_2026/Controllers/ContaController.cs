@@ -31,15 +31,6 @@ namespace PIM_2026.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            // PROCURA CLIENTE
-            // var cliente = _context.Clientes
-            //     .FirstOrDefault(c => c.Email == email && c.Senha == senha);
-
-            //if (cliente != null)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            // }
-
             // MENSAGEM DE ERRO
             ViewBag.Erro = "Usuário não cadastrado ou senha incorreta";
 
@@ -71,24 +62,6 @@ namespace PIM_2026.Controllers
                 return View();
             }
 
-            // 🔽 AQUI ENTRA O BANCO (deixe comentado por enquanto)
-
-            // var usuario = _context.Usuarios
-            //     .FirstOrDefault(u => u.Email == email);
-
-            // Verifica se o usuário existe
-            // if (usuario == null)
-            // {
-            //     ViewBag.Erro = "Email não encontrado.";
-            //     return View();
-            // }
-
-            // Atualiza a senha (⚠️ depois usar hash!)
-            // usuario.Senha = novaSenha;
-
-            // _context.SaveChanges();
-
-            // 🔼 FIM DO BANCO
 
             ViewBag.Sucesso = "Senha redefinida com sucesso!";
             return View();

@@ -18,7 +18,7 @@ namespace PIM_2026.Controllers
         }
 
         //Verificar login - TESTE
-        public IActionResult VerificarLogin()
+        public IActionResult Verificarloginagendamento()
         {
             var usuario = HttpContext.Session.GetString("UsuarioNome");
 
@@ -26,6 +26,20 @@ namespace PIM_2026.Controllers
             {
                 // usuário logado
                 return RedirectToAction("Index", "Agendamento");
+            }
+
+            // usuário NÃO logado
+            return RedirectToAction("Login", "Conta");
+        }
+
+        public IActionResult Verificarloginmeusagendamentos()
+        {
+            var usuario = HttpContext.Session.GetString("UsuarioNome");
+
+            if (usuario != null)
+            {
+                // usuário logado
+                return RedirectToAction("Meusagendamentos", "Agendamento");
             }
 
             // usuário NÃO logado
