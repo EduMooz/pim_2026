@@ -27,7 +27,8 @@ namespace PIM_2026.Controllers
             agendamento.Status = "Pendente";
 
 
-            return RedirectToAction("Confirmacao", agendamento);
+            //apaguei o (", agendamento")
+            return RedirectToAction("Confirmacao");
         }
     }
 }

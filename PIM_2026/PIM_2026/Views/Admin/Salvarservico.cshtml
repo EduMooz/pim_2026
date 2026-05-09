@@ -2,14 +2,27 @@
     ViewData["Title"] = "Cadastro de Serviço";
 }
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow p-5 text-center" style="max-width: 500px;">
+<div class="container py-5 d-flex justify-content-center align-items-center min-vh-100">
 
+    <div class="card shadow border-0 rounded-4 text-center p-5"
+         style="max-width: 500px; width: 100%;">
+
+        <!-- ÍCONE -->
+        <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+        </div>
+
+        <!-- TÍTULO -->
         <h2 class="text-success mb-3">Serviço cadastrado com sucesso!</h2>
 
-        <a asp-action="Horarios" class="btn btn-primary mt-3">Ir para Serviços</a>
-        <br />
-        <a asp-action="Index" class="btn btn-outline-warning">Pagina Inicial</a>
-        
+        <!-- TEXTO -->
+        <p class="text-muted mb-4">O serviço foi adicionado ao sistema.</p>
+
+        <!-- BOTÕES -->
+        <div class="d-flex flex-column gap-3">
+            <a asp-action="Listarservico" class="btn btn-primary">Ir para Serviços</a>
+
+            <a asp-action="Index"class="btn btn-outline-warning">Página Inicial</a>
+        </div>
     </div>
 </div>

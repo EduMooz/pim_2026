@@ -24,6 +24,12 @@ namespace PIM_2026.Controllers
                 HttpContext.Session.SetString("TipoUsuario", "Admin");
                 return RedirectToAction("Dashboard", "Admin");
             }
+            else if (email == "usuario@gmail.com" && senha == "user911")
+            {
+                HttpContext.Session.SetString("UsuarioNome", "Usuario");
+                HttpContext.Session.SetString("TipoUsuario", "Usuario");
+                return RedirectToAction("Index", "Home");
+            }
 
             // PROCURA CLIENTE
             // var cliente = _context.Clientes

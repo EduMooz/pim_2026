@@ -1,3 +1,83 @@
-<!--Em processo de criação-->
+@{
+    ViewData["Title"] = "Meus Agendamentos";
+}
 
-<h2>Meus agendamentos</h2>
+<div class="container mt-5">
+
+    <h2 class="text-center mb-5">
+        Meus Agendamentos
+    </h2>
+
+    <div class="row">
+
+        <!-- AGENDAMENTO 1 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow rounded-4 border-0">
+                <div class="card-body p-4">
+                    <h4 class="mb-3">Alongamento de Unha</h4>
+
+                    <p>
+                        <strong>Data:</strong>
+                        10/05/2026
+                    </p>
+
+                    <p>
+                        <strong>Horário:</strong>
+                        14:00
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+
+                        <span class="badge bg-success">
+                            Confirmado
+                        </span>
+                    </p>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <button class="btn btn-success">
+                            Confirmar
+                        </button>
+
+                        <button class="btn btn-outline-danger">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AGENDAMENTO 2 -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow rounded-4 border-0">
+                <div class="card-body p-4">
+                    <h4 class="mb-3">Manicure</h4>
+
+                    <p>
+                        <strong>Data:</strong>
+                        15/05/2026
+                    </p>
+
+                    <p>
+                        <strong>Horário:</strong>
+                        09:30
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+
+                        <span class="badge bg-warning text-dark">
+                            Pendente
+                        </span>
+                    </p>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <button class="btn btn-success">Confirmar</button>
+
+                        <button class="btn btn-outline-danger">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

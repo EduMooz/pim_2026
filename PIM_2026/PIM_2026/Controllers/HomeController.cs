@@ -16,5 +16,20 @@ namespace PIM_2026.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //Verificar login - TESTE
+        public IActionResult VerificarLogin()
+        {
+            var usuario = HttpContext.Session.GetString("UsuarioNome");
+
+            if (usuario != null)
+            {
+                // usuário logado
+                return RedirectToAction("Index", "Agendamento");
+            }
+
+            // usuário NÃO logado
+            return RedirectToAction("Login", "Conta");
+        }
     }
 }
