@@ -59,7 +59,7 @@
                 <div class="tab-pane fade" id="dataHorario">
                     <h4 class="mb-3">Escolha a data</h4>
                     <!--Adicionar um calendario-->
-                    <input type="date" class="form-control mb-4" name="Data" id="data" required>
+                    <input type="text" class="form-control mb-4" name="Data" id="data" required>
 
                     <h4 class="mb-3">Escolha o horário</h4>
                     <select class="form-select mb-4" name="Horario" id="horario" required>
@@ -78,7 +78,6 @@
                         <button type="button" class="btn btn-rosa" onclick="validarDataHorario()">Próximo</button>
                     </div>
                 </div>
-
 
                 <!-- RESUMO -->
                 <div class="tab-pane fade" id="resumo">
@@ -102,7 +101,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <button type="button"class="btn btn-outline-secondary" onclick="irParaAba('dataHorario')">Voltar</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="irParaAba('dataHorario')">Voltar</button>
                         <div class="d-flex gap-2">
                             <a asp-controller="Home" asp-action="Index" class="btn btn-outline-danger">Cancelar</a>
                             <button type="submit" class="btn btn-success">Confirmar Agendamento</button>
@@ -114,9 +113,8 @@
     </div>
 </div>
 
-
+<!--Script para que criar abas (Procedimento, Data e horario, Resumo) e ser somente possivel ir para a proxima aba quando a anterior estiver preenchida-->
 <script>
-
     function irParaAba(idAba) {
 
         const trigger = document.querySelector(
@@ -175,5 +173,15 @@
 
         irParaAba('resumo');
     }
+</script>
 
+<!--Script para quando o usuario for escolher a data, aparecer um calendario-->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+<script>
+    flatpickr("#data", {
+    dateFormat: "d/m/Y",
+    minDate: "today",
+    locale: "pt"
+    });
 </script>

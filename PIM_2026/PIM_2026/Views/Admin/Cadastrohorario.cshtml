@@ -1,48 +1,49 @@
 ﻿@{
-    ViewData["Title"] = "Cadastrar Horário";
+    ViewData["Title"] = "Cadastrar Disponibilidade na Agenda";
 }
 
 <div class="container mt-5">
     <div class="card shadow-sm border-0 rounded-4">
         <div class="card-body p-4">
-            <h2 class="mb-4">Cadastrar Horário</h2>
+            <h2 class="mb-4">Cadastrar na Agenda</h2>
 
-            <form>
-                <!-- DATA -->
+            <form method="post" asp-controller="Admin" asp-action="Cadastrarhorario">
+
+                <!-- DATA DA AGENDA -->
                 <div class="mb-3">
-                    <label class="form-label">Data</label>
-                    <input type="date"class="form-control">
+                    <label class="form-label">Data da Agenda</label>
+                    <input type="date" class="form-control" name="DataAgenda" required>
                 </div>
 
                 <!-- HORÁRIO INICIAL -->
                 <div class="mb-3">
                     <label class="form-label">Horário Inicial</label>
-                    <input type="time" class="form-control">
+                    <input type="time" class="form-control" name="HoraInicio" required>
                 </div>
 
                 <!-- HORÁRIO FINAL -->
                 <div class="mb-3">
                     <label class="form-label">Horário Final</label>
-                    <input type="time" class="form-control">
+                    <input type="time" class="form-control" name="HoraFim" required>
                 </div>
 
                 <!-- STATUS -->
                 <div class="mb-4">
                     <label class="form-label">Status</label>
-
-                    <select class="form-select">
-                        <option selected>Selecione</option>
-                        <option>Disponível</option>
-                        <option>Bloqueado</option>
+                    <select class="form-select" name="Status" required>
+                        <option value="">Selecione</option>
+                        <option value="Disponivel">Disponível</option>
+                        <option value="Bloqueado">Bloqueado</option>
                     </select>
                 </div>
 
                 <!-- BOTÕES -->
                 <div class="d-flex gap-2 flex-wrap">
-                    <button type="button" class="btn btn-success">Salvar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
 
-                    <a asp-controller="Agenda" asp-action="Diaria" class="btn btn-secondary">Cancelar</a>
+                    <a asp-controller="Admin" asp-action="Horarios" class="btn btn-secondary">Cancelar</a>
                 </div>
+
             </form>
         </div>
     </div>
