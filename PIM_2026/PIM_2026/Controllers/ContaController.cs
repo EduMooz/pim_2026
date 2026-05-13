@@ -75,21 +75,29 @@ namespace PIM_2026.Controllers
         }
 
 
-
     [HttpPost]
     public IActionResult Cadastro(Cliente cliente)
     {
-        // como não tem banco,
-        // apenas simula cadastro
+        if (string.IsNullOrWhiteSpace(cliente.Nome) ||
+            string.IsNullOrWhiteSpace(cliente.Email) ||
+            string.IsNullOrWhiteSpace(cliente.Senha) ||
+            string.IsNullOrWhiteSpace(cliente.Telefone))
+        {
+            ViewBag.Erro = "Preencha todos os campos.";
+            return View("Login");
+        }
 
         ViewBag.Sucesso = "Cadastro realizado com sucesso";
 
         return RedirectToAction("Confirmacaocadastro");
     }
+   
 
         public IActionResult Confirmacaocadastro()
     {
         return View();
     }
+
+    
     }
 }
