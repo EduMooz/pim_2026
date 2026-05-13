@@ -1,18 +1,15 @@
-using System.Data;
-
 namespace PIM_2026.Models
 {
-    public class Cliente
+    public class Cliente : Usuario
     {
-        
         public int Idcliente { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
+
         public string Telefone { get; set; }
 
-
+        // POLIMORFISMO
+        public override string TipoUsuario()
+        {
+            return "Cliente";
+        }
     }
-
-    
 }

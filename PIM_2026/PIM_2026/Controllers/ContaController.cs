@@ -1,6 +1,5 @@
 
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PIM_2026.Models;
 
 namespace PIM_2026.Controllers
@@ -74,5 +73,23 @@ namespace PIM_2026.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
+
+    [HttpPost]
+    public IActionResult Cadastro(Cliente cliente)
+    {
+        // como não tem banco,
+        // apenas simula cadastro
+
+        ViewBag.Sucesso = "Cadastro realizado com sucesso";
+
+        return RedirectToAction("Confirmacaocadastro");
+    }
+
+        public IActionResult Confirmacaocadastro()
+    {
+        return View();
+    }
     }
 }
