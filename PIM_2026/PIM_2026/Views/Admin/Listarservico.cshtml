@@ -3,78 +3,59 @@
 }
 
 <div class="container mt-4">
-
-    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
-
-        <h2>
-            Serviços Cadastrados
-        </h2>
-
-        <a asp-action="Cadastroservico"
-               class="btn btn-primary">
-            Novo Serviço
-        </a>
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h2 class="titulo-admin">Serviços Cadastrados</h2>
+        <a asp-action="Cadastroservico" class="btn btn-rosa">Novo Serviço</a>
 
     </div>
 
-    <!-- TABELA -->
-    <div class="card shadow border-0 rounded-4">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Duração</th>
-                            <th class="text-center">Ações</th>
-                        </tr>
-                    </thead>
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Duração</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
 
-                    <tbody>
-                        <!-- SERVIÇO 1 -->
-                        <tr>
-                            <td>Alongamento de Unha</td>
-                            <td>R$ 120,00</td>
+                <tbody>
+                    <tr>
+                        <td>Alongamento de Unha</td>
+                        <td>R$ 120,00</td>
+                        <td>60 minutos</td>
+                        <td class="text-center botoes-acoes">
 
-                            <td>60 minutos</td>
+                            <button class="btn btn-sm btn-rosa">Editar</button>
 
-                            <td class="text-center">
-                                <button class="btn btn-warning btn-sm me-1">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </td>
+                    </tr>
 
-                                <button class="btn btn-danger btn-sm">Excluir</button>
-                            </td>
+                    <tr>
+                        <td>Manicure</td>
+                        <td>R$ 45,00</td>
+                        <td>40 minutos</td>
+                        <td class="text-center botoes-acoes">
+                            <button class="btn btn-sm btn-rosa">Editar</button>
 
-                        </tr>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </td>
+                    </tr>
 
-                        <!-- SERVIÇO 2 -->
-                        <tr>
-                            <td>Manicure</td>
-                            <td>R$ 45,00</td>
-
-                            <td>40 minutos</td>
-
-                            <td class="text-center">
-                                <button class="btn btn-warning btn-sm me-1">Editar</button>
-
-                                <button class="btn btn-danger btn-sm">Excluir</button>
-                            </td>
-                        </tr>
-
-                        <!-- SERVIÇO 3 -->
-                        <tr>
-                            <td>Pedicure</td>
-                            <td>R$ 45,00</td>
-                            <td>40 minutos</td>
-                            <td class="text-center">
-                                <button class="btn btn-warning btn-sm me-1">Editar</button>
-
-                                <button class="btn btn-danger btn-sm">Excluir</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <tr>
+                        <td>Pedicure</td>
+                        <td>R$ 45,00</td>
+                        <td>40 minutos</td>
+                        <td class="text-center botoes-acoes">
+                            <button class="btn btn-sm btn-rosa">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

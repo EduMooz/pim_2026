@@ -26,7 +26,7 @@ namespace PIM_2026.Controllers
             else if (email == "usuario@gmail.com" && senha == "user911")
             {
                 HttpContext.Session.SetString("UsuarioNome", "Usuario");
-                HttpContext.Session.SetString("TipoUsuario", "Usuario");
+                HttpContext.Session.SetString("TipoUsuario", "Cliente");
                 return RedirectToAction("Index", "Home");
             }
 

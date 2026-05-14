@@ -2,19 +2,32 @@
     ViewData["Title"] = "Meus Agendamentos";
 }
 
-<div class="container mt-5">
+<div class="container-agendamentos">
 
-    <h2 class="text-center mb-5">
-        Meus Agendamentos
-    </h2>
+    <div class="text-center mb-5">
+
+        <h2 class="titulo-pagina">
+            Meus Agendamentos
+        </h2>
+
+        <p class="text-muted">
+            Acompanhe seus horários agendados
+        </p>
+
+    </div>
 
     <div class="row">
 
-        <!-- AGENDAMENTO 1 -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow rounded-4 border-0">
-                <div class="card-body p-4">
-                    <h4 class="mb-3">Alongamento de Unha</h4>
+        <!-- AGENDAMENTO -->
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="card-meu-agendamento">
+
+                <div class="status-topo status-confirmado"></div>
+
+                <div class="conteudo-agendamento">
+
+                    <h4>Alongamento de Unha</h4>
 
                     <p>
                         <strong>Data:</strong>
@@ -26,32 +39,38 @@
                         14:00
                     </p>
 
-                    <p>
-                        <strong>Status:</strong>
-
-                        <span class="badge bg-success">
-                            Confirmado
-                        </span>
-                    </p>
+                    <span class="badge-status confirmado">
+                        Confirmado
+                    </span>
 
                     <div class="d-flex gap-2 mt-4 botoes-acoes">
-                        <button class="btn btn-success" disabled>
-                            Confirmar
+
+                        <button class="btn btn-rosa w-100" disabled>
+                            Confirmado
                         </button>
 
-                        <button class="btn btn-outline-danger">
+                        <button class="btn btn-outline-rosa w-100">
                             Cancelar
                         </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!-- AGENDAMENTO 2 -->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow rounded-4 border-0">
-                <div class="card-body p-4">
-                    <h4 class="mb-3">Manicure</h4>
+        <!-- AGENDAMENTO -->
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="card-meu-agendamento">
+
+                <div class="status-topo status-pendente"></div>
+
+                <div class="conteudo-agendamento">
+
+                    <h4>Manicure</h4>
 
                     <p>
                         <strong>Data:</strong>
@@ -63,28 +82,38 @@
                         09:30
                     </p>
 
-                    <p>
-                        <strong>Status:</strong>
-
-                        <span class="badge bg-warning text-dark">
-                            Pendente
-                        </span>
-                    </p>
+                    <span class="badge-status pendente">
+                        Pendente
+                    </span>
 
                     <div class="d-flex gap-2 mt-4 botoes-acoes">
-                        <button class="btn btn-success">Confirmar</button>
 
-                        <button class="btn btn-outline-danger">Cancelar</button>
+                        <button class="btn btn-rosa w-100">
+                            Confirmar
+                        </button>
+
+                        <button class="btn btn-outline-rosa w-100">
+                            Cancelar
+                        </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
 
-        <!--AGENDAMENTO 3-->
-        <div class="col-md-6 mb-4">
-            <div class="card shadow rounded-4 border-0">
-                <div class="card-body p-4">
-                    <h4 class="mb-3">Hidratação dos pés</h4>
+        <!-- AGENDAMENTO -->
+        <div class="col-md-6 col-lg-4 mb-4">
+
+            <div class="card-meu-agendamento">
+
+                <div class="status-topo status-cancelado"></div>
+
+                <div class="conteudo-agendamento">
+
+                    <h4>Hidratação dos pés</h4>
 
                     <p>
                         <strong>Data:</strong>
@@ -96,21 +125,28 @@
                         14:00
                     </p>
 
-                    <p>
-                        <strong>Status:</strong>
+                    <span class="badge-status cancelado">
+                        Cancelado
+                    </span>
 
-                        <span class="badge bg-warning text-dark">
-                            Cancelado
-                        </span>
-                    </p>
+                    <div class="d-flex gap-2 mt-4 botoes-acoes">
 
-                    <div class="d-flex gap-2 mt-4 boto">
-                        <button type="button" class="btn btn-success" disabled>Confirmar</button>
+                        <button class="btn btn-rosa w-100" disabled>
+                            Confirmar
+                        </button>
 
-                        <button type="button" class="btn btn-outline-danger" disabled>Cancelar</button>
+                        <button class="btn btn-outline-rosa w-100" disabled>
+                            Cancelar
+                        </button>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>

@@ -2,33 +2,40 @@
     ViewData["Title"] = "Agendamento";
 }
 
-<div class="container py-5">
+<div class="container container-login-mobile d-flex justify-content-center align-items-center">
 
-    <h2 class="text-center mb-4">Agende seu Horário</h2>
+    <div class="card-agendamento">
 
-    <div class="card shadow-lg p-4 rounded-4">
+        <h2 class="text-center mb-4">Agende seu Horário</h2>
+
         <form method="post" asp-controller="Agendamento" asp-action="Salvaragendamento" id="formAgendamento">
 
             <!-- ABAS -->
             <ul class="nav nav-pills nav-justified mb-4" id="abasAgendamento">
                 <li class="nav-item">
-                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#procedimento" type="button">Procedimento</button>
+                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#procedimento" type="button">
+                        Procedimento
+                    </button>
                 </li>
 
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dataHorario" type="button">Data e horário</button>
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dataHorario" type="button">
+                        Data e horário
+                    </button>
                 </li>
 
                 <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#resumo" type="button">Resumo</button>
+                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#resumo" type="button">
+                        Resumo
+                    </button>
                 </li>
             </ul>
 
-            <!-- CONTEÚDO DAS ABAS -->
             <div class="tab-content">
 
                 <!-- PROCEDIMENTO -->
                 <div class="tab-pane fade show active" id="procedimento">
+
                     <h4 class="mb-3">Escolha o serviço</h4>
 
                     <select class="form-select mb-4" name="Servico" id="servico" required>
@@ -51,17 +58,22 @@
                     </select>
 
                     <div class="text-end">
-                        <button type="button" class="btn btn-rosa" onclick="validarProcedimento()">Próximo</button>
+                        <button type="button" class="btn btn-rosa" onclick="validarProcedimento()">
+                            Próximo
+                        </button>
                     </div>
+
                 </div>
 
                 <!-- DATA E HORÁRIO -->
                 <div class="tab-pane fade" id="dataHorario">
+
                     <h4 class="mb-3">Escolha a data</h4>
-                    <!--Adicionar um calendario-->
+
                     <input type="text" class="form-control mb-4" name="Data" id="data" required>
 
                     <h4 class="mb-3">Escolha o horário</h4>
+
                     <select class="form-select mb-4" name="Horario" id="horario" required>
                         <option value="">Selecione um horário</option>
                         <option>09:00</option>
@@ -73,44 +85,52 @@
                     </select>
 
                     <div class="d-flex justify-content-between botoes-acoes">
-                        <button type="button" class="btn btn-outline-secondary" onclick="irParaAba('procedimento')">Voltar</button>
+                        <button type="button" class="btn btn-outline-rosa" onclick="irParaAba('procedimento')">
+                            Voltar
+                        </button>
 
-                        <button type="button" class="btn btn-rosa" onclick="validarDataHorario()">Próximo</button>
+                        <button type="button" class="btn btn-rosa" onclick="validarDataHorario()">
+                            Próximo
+                        </button>
                     </div>
+
                 </div>
 
                 <!-- RESUMO -->
                 <div class="tab-pane fade" id="resumo">
+
                     <h4 class="mb-4">Resumo do Agendamento</h4>
 
-                    <div class="bg-light rounded p-4 mb-4">
-                        <p>
-                            <strong>Serviço:</strong>
-                            <span id="resumoServico"></span>
-                        </p>
-
-                        <p>
-                            <strong>Data:</strong>
-                            <span id="resumoData"></span>
-                        </p>
-
-                        <p>
-                            <strong>Horário:</strong>
-                            <span id="resumoHorario"></span>
-                        </p>
+                    <div class="resumo-agendamento mb-4">
+                        <p><strong>Serviço:</strong> <span id="resumoServico"></span></p>
+                        <p><strong>Data:</strong> <span id="resumoData"></span></p>
+                        <p><strong>Horário:</strong> <span id="resumoHorario"></span></p>
                     </div>
 
                     <div class="d-flex justify-content-between botoes-acoes">
-                        <button type="button" class="btn btn-outline-secondary" onclick="irParaAba('dataHorario')">Voltar</button>
+                        <button type="button" class="btn btn-outline-rosa" onclick="irParaAba('dataHorario')">
+                            Voltar
+                        </button>
+
                         <div class="d-flex gap-2 botoes-acoes">
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-danger">Cancelar</a>
-                            <button type="submit" class="btn btn-success">Confirmar Agendamento</button>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-danger">
+                                Cancelar
+                            </a>
+
+                            <button type="submit" class="btn btn-rosa">
+                                Confirmar Agendamento
+                            </button>
                         </div>
                     </div>
+
                 </div>
+
             </div>
+
         </form>
+
     </div>
+
 </div>
 
 <!--Script para que criar abas (Procedimento, Data e horario, Resumo) e ser somente possivel ir para a proxima aba quando a anterior estiver preenchida-->

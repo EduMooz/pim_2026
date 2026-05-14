@@ -2,82 +2,113 @@
     ViewData["Title"] = "Página Inicial";
 }
 
-<main>
-    <!-- sessão inicial, onde tem o nome da manicure e uma breve descrição, juntamente com um botão para agendar o horario-->
-    <section class="hero">
-        <h2>Erika Santana</h2>
-        <p class="subtitulo">Especialista em manicure e nail design</p>
-        <p class="descricao">Atendimento personalizado, esmaltação impecável e unhas que valorizam sua beleza.</p>
-            
-        <a asp-controller="Home" asp-action="Verificarloginagendamento" class="btn btn-rosa">Agende seu horário</a>
-    </section>
+<section class="hero">
+    <h1>Erika Santana</h1>
 
-    <!-- sessão serviços, onde esta listado dois dos serviços oferecidos-->    
-    <section class="servicos">
-        <h2>Serviços oferecidos</h2>
-        <p>Confira alguns dos nossos serviços</p>
+    <p class="subtitulo">
+        Especialista em manicure e nail design
+    </p>
 
-        <div class="row">
+    <p class="descricao">
+        Atendimento personalizado, esmaltação impecável e unhas que valorizam sua beleza.
+    </p>
 
-            <div class="col-md-6">
-                <div class="card-servico">
-                    <img src="~/img/foto_mao2.jpeg" class="img-fluid" alt="Cutilagem das mãos" />
-                    <div class="texto-card">
-                        <h3>Cutilagem e Esmaltação das Mãos</h3>
-                        <p>Remoção de cutículas, lixamento e esmaltação com acabamento impecável para unhas bonitas e bem cuidadas</p>
-                        <span>R$45,00 • 45 min</span>
-                    </div>
-                    
-                </div>
-            </div>
+    <a asp-controller="Home"
+       asp-action="Verificarloginagendamento"
+       class="btn btn-rosa">
+        Agende seu horário
+    </a>
+</section>
 
-            <div class="col-md-6">
-                <div class="card-servico">
-                    <img src="~/img/foto_pe.jpeg" class="img-fluid" alt="Cutilagem dos pés" />
-                    <div class="texto-card">
-                        <h3>Cutilagem e Esmaltação dos Pés</h3>
-                        <p>Cuidados com cutículas, lixamento e esmaltação para pés bonitos e bem cuidados.</p>
-                        <span>R$50,00 • 60 min</span>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="servicos">
+    <h2>Serviços oferecidos</h2>
+    <p>Confira alguns dos nossos serviços</p>
 
-    <!--sessão com localização do salão e as redes sociais da manicure-->
-    <section class="localizacao">
-        <h2>Localização e Contato</h2>
+    <div class="row">
 
-        <div class="container-localizacao">
-            <div class="coluna-esquerda">
-                <h3>Endereço</h3>
-                <p>
-                    Rua das Flores, 123 - Jardim Primavera<br />
-                    São Paulo - SP<br />
-                    CEP: 01234-567
-                </p>
-            
-                <h3>Horário de Atendimento</h3>
-                <p>
-                    Segunda a Sexta: 9h às 19h <br />
-                    Sábado: 9h às 17h <br />
-                    Domingo: Fechado
-                </p>
-            </div>
+        <div class="col-md-6">
+            <div class="card-servico">
+                <img src="~/img/foto_mao2.jpeg"
+                     class="img-fluid"
+                     alt="Cutilagem das mãos" />
 
-            <div class="coluna-direita">
-                <h3>Contato</h3>
-                <div class="redes">
-                    <a href="https://wa.me/5516999999999" target="_blank" rel="noopener noreferrer" class="icon-whatsapp" aria-label="Whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
+                <div class="texto-card">
+                    <h3>Cutilagem e Esmaltação das Mãos</h3>
 
-                    <a href="https://www.instagram.com/erikasobralm2?igsh=MTVhd3cxMmVoMDFuOQ==" target="_blank" class="icon-instagram" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                    <p>
+                        Remoção de cutículas, lixamento e esmaltação com acabamento impecável para unhas bonitas e bem cuidadas.
+                    </p>
+
+                    <span>R$45,00 • 45 min</span>
                 </div>
             </div>
         </div>
-    </section>
-</main>
+
+        <div class="col-md-6">
+            <div class="card-servico">
+                <img src="~/img/foto_pe.jpeg"
+                     class="img-fluid"
+                     alt="Cutilagem dos pés" />
+
+                <div class="texto-card">
+                    <h3>Cutilagem e Esmaltação dos Pés</h3>
+
+                    <p>
+                        Cuidados com cutículas, lixamento e esmaltação para pés bonitos e bem cuidados.
+                    </p>
+
+                    <span>R$50,00 • 60 min</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="localizacao">
+    <h2>Localização e Contato</h2>
+
+    <div class="container-localizacao">
+
+        <div class="coluna-esquerda">
+            <h3>Endereço</h3>
+
+            <p>
+                Rua das Flores, 123 - Jardim Primavera<br />
+                São Paulo - SP<br />
+                CEP: 01234-567
+            </p>
+
+            <h3>Horário de Atendimento</h3>
+
+            <p>
+                Segunda a Sexta: 9h às 19h<br />
+                Sábado: 9h às 17h<br />
+                Domingo: Fechado
+            </p>
+        </div>
+
+        <div class="coluna-direita">
+            <h3>Contato</h3>
+
+            <div class="redes">
+                <a href="https://wa.me/5516999999999"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="icon-whatsapp"
+                   aria-label="Whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/erikasobralm2?igsh=MTVhd3cxMmVoMDFuOQ=="
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="icon-instagram"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>

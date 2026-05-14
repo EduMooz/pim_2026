@@ -2,16 +2,32 @@
     ViewData["Title"] = "Confirmação";
 }
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="card shadow p-5 text-center" style="max-width: 500px;">
+<div class="container-confirmacao">
 
-        <h2 class="text-success mb-3">Agendamento Confirmado!</h2>
+    <div class="card-confirmacao text-center">
 
-        <p class="mb-4">Seu agendamento foi realizado com sucesso.</p>
+        <h2 class="titulo-confirmacao mb-3">
+            Agendamento Confirmado!
+        </h2>
 
-        <a asp-action="Meusagendamentos" class="btn btn-primary mt-3">Ir para meus agendamentos</a>
-        <br />
-        <a asp-action="Index" class="btn btn-outline-warning">Novo agendamento</a>
-        
+        <p class="mb-4">
+            Seu agendamento foi realizado com sucesso.
+        </p>
+
+        <div class="d-flex flex-column gap-3 botoes-acoes">
+
+            <a asp-action="Meusagendamentos"
+               class="btn btn-rosa">
+                Ir para meus agendamentos
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-outline-rosa">
+                Novo agendamento
+            </a>
+
+        </div>
+
     </div>
+
 </div>

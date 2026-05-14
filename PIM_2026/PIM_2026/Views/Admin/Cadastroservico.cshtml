@@ -2,41 +2,34 @@
     ViewData["Title"] = "Cadastrar Serviço";
 }
 
-<div class="container mt-5">
-    <div class="card shadow-sm border-0 rounded-4">
-        <div class="card-body p-4">
-            <h2 class="mb-4">Cadastrar Serviço</h2>
+<div class="container container-login-mobile d-flex justify-content-center align-items-center">
+    <div class="card-login">
+        <h2 class="text-center mb-4">Cadastrar Serviço</h2>
 
-            <form>
+        <form method="post" asp-controller="Admin" asp-action="">
+            <!-- PROCEDIMENTO -->
+            <div class="mb-3">
+                <label class="form-label">Procedimento</label>
+                <input type="text" class="form-control" placeholder="Ex: Alongamento de unha">
+            </div>
 
-                <!-- PROCEDIMENTO -->
-                <div class="mb-3">
-                    <label class="form-label">Procedimento</label>
+            <!-- PREÇO -->
+            <div class="mb-3">
+                <label class="form-label">Preço</label>
+                <input type="number" class="form-control" placeholder="Ex: 120">
+            </div>
 
-                    <input type="text" class="form-control" placeholder="Ex: Alongamento de unha">
-                </div>
+            <!-- DURAÇÃO -->
+            <div class="mb-4">
+                <label class="form-label">Duração</label>
+                <input type="number" class="form-control" placeholder="Ex: 30">
+            </div>
 
-                <!-- PREÇO -->
-                <div class="mb-3">
-                    <label class="form-label">Preço</label>
-
-                    <input type="number" class="form-control" placeholder="R$ 120,00">
-                </div>
-
-                <!-- DURAÇÃO -->
-                <div class="mb-4">
-                    <label class="form-label">Duração</label>
-
-                    <input type="number" class="form-control" placeholder="Ex: 30 minutos">
-                </div>
-
-                <!-- BOTÕES -->
-                <div class="d-flex gap-2 flex-wrap botoes-acoes">
-                    <button type="button" asp-controller="Admin" asp-action="Salvarservico" class="btn btn-success">Salvar</button>
-
-                    <a asp-controller="Admin" asp-action="Listarservico" class="btn btn-secondary">Cancelar</a>
-                </div>
-            </form>
-        </div>
+            <!-- BOTÕES -->
+            <div class="d-flex gap-2 botoes-acoes">
+                <a asp-controller="Admin" asp-action="Salvarservico" class="btn btn-rosa w-100">Salvar</a>
+                <a asp-controller="Admin" asp-action="Listarservico" class="btn btn-outline-rosa w-100">Cancelar</a>
+            </div>
+        </form>
     </div>
 </div>

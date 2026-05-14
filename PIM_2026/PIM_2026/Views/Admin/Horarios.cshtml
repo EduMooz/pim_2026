@@ -2,59 +2,70 @@
     ViewData["Title"] = "Controle de Horários";
 }
 
-<h2>Controle de Horários</h2>
+<div class="container mt-5">
 
-<button type="button" class="btn btn-success mb-3" asp-action="Cadastrohorario">Adicionar Horário</button>
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
 
-<table class="table table-hover align-middle">
-    <thead>
-        <tr>
-            <th>Dia</th>
-            <th>Horário</th>
-            <th>Status</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
+        <h2 class="titulo-admin m-0">Controle de Horários</h2>
 
-    <tbody>
-        <tr>
-            <td>Segunda-feira</td>
-            <td>08:00 às 18:00</td>
+        <a asp-action="Cadastrohorario" class="btn btn-rosa">Adicionar Horário</a>
 
-            <td>
-                <span class="badge bg-success">Livre</span>
-            </td>
+    </div>
 
-            <td>
-                <button type="button" class="btn btn-warning btn-sm">Bloquear</button>
-            </td>
-        </tr>
+    <div class="card-tabela">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                        <th>Status</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
 
-        <tr>
-            <td>Terça-feira</td>
-            <td>09:00 às 17:00</td>
+                <tbody>
+                    <tr>
+                        <td>Segunda-feira</td>
+                        <td>08:00 às 18:00</td>
+                        <td>
+                            <span class="badge bg-success">Livre</span>
+                        </td>
 
-            <td>
-                <span class="badge bg-danger">Bloqueado</span>
-            </td>
+                        <td class="text-center botoes-acoes">
+                            <button type="button" class="btn btn-warning btn-sm">Bloquear</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger btn-sm">Excluir</button>
+                        </td>
+                    </tr>
 
-            <td>
-                <button type="button" class="btn btn-success btn-sm">Liberar</button>
-            </td>
-        </tr>
+                    <tr>
+                        <td>Terça-feira</td>
+                        <td>09:00 às 17:00</td>
+                        <td>
+                            <span class="badge bg-danger">Bloqueado</span>
+                        </td>
 
-        <tr>
-            <td>Quarta-feira</td>
-            <td>10:00 às 19:00</td>
+                        <td class="text-center botoes-acoes">
+                            <button type="button" class="btn btn-success btn-sm">Liberar</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger btn-sm">Excluir</button>
+                        </td>
 
-            <td>
-                <span class="badge bg-success">Livre</span>
-            </td>
+                    </tr>
 
-            <td>
-                <button type="button" class="btn btn-warning btn-sm">Bloquear</button>
-            </td>
-        </tr>
+                    <tr>
+                        <td>Quarta-feira</td>
+                        <td>10:00 às 19:00</td>
+                        <td>
+                            <span class="badge bg-success">Livre</span>
+                        </td>
 
-    </tbody>
-</table>
+                        <td class="text-center botoes-acoes">
+                            <button type="button" class="btn btn-warning btn-sm">Bloquear</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger btn-sm">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

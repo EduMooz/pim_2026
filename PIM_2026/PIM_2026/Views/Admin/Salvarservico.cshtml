@@ -1,23 +1,17 @@
 @{
-    ViewData["Title"] = "Cadastro de Serviço";
+    ViewData["Title"] = "Serviço Cadastrado";
 }
 
-<div class="container py-5 d-flex justify-content-center align-items-center min-vh-100">
+<div class="container container-confirmacao">
+    <div class="card-confirmacao">
+        <h2 class="titulo-confirmacao">Serviço cadastrado!</h2>
 
-    <div class="card shadow border-0 rounded-4 text-center p-5"
-         style="max-width: 500px; width: 100%;">
+        <p class="texto-confirmacao">O serviço foi adicionado ao sistema com sucesso.</p>
 
-        <!-- TÍTULO -->
-        <h2 class="text-success mb-3">Serviço cadastrado com sucesso!</h2>
+        <div class="d-flex flex-column gap-3 botoes-acoes">
+            <a asp-action="Listarservico" class="btn btn-rosa">Ir para Serviços</a>
 
-        <!-- TEXTO -->
-        <p class="text-muted mb-4">O serviço foi adicionado ao sistema.</p>
-
-        <!-- BOTÕES -->
-        <div class="d-flex flex-column gap-3">
-            <a asp-action="Listarservico" class="btn btn-primary">Ir para Serviços</a>
-
-            <a asp-action="Index"class="btn btn-outline-warning">Página Inicial</a>
+            <a asp-action="Index" class="btn btn-outline-rosa">Página Inicial</a>
         </div>
     </div>
 </div>

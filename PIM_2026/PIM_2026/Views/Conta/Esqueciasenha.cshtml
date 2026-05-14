@@ -2,52 +2,81 @@
     ViewData["Title"] = "Redefinir senha";
 }
 
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card shadow-lg p-4 rounded-4">
+<div class="container container-login-mobile d-flex justify-content-center align-items-center min-vh-100">
 
-                <h3 class="text-center mb-3">Redefinir senha</h3>
-                <p class="text-muted text-center mb-4">Digite seu email e a nova senha</p>
+    <div class="card-login">
 
-                @if (ViewBag.Erro != null)
-                {
-                    <div class="alert alert-danger text-center">
-                        @ViewBag.Erro
-                    </div>
-                }
+        <h3 class="text-center mb-3">
+            Redefinir senha
+        </h3>
 
-                @if (ViewBag.Sucesso != null)
-                {
-                    <div class="alert alert-success text-center">
-                        @ViewBag.Sucesso
-                    </div>
-                }
+        <p class="text-muted text-center mb-4">
+            Digite seu email e a nova senha
+        </p>
 
-                <form asp-controller="Conta" asp-action="Esqueciasenha" method="post">
-                    <div class="mb-3">
-                        <label>Email</label>
-                        <input type="email" name="Email" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label>Nova senha</label>
-                        <input type="password" name="novaSenha" class="form-control" required>
-                    </div>
-
-                    <!--Verificar-->
-                    <div class="mb-3">
-                        <label>Digite novamente a nova senha</label>
-                        <input type="password" name="confirmarSenha" class="form-control" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-rosa w-100">Redefinir senha</button>
-
-                    <div class="text-center mt-3">
-                        <a asp-controller="Conta" asp-action="Login">Voltar para o login</a>
-                    </div>
-                </form>
+        @if (ViewBag.Erro != null)
+        {
+            <div class="alert alert-danger text-center">
+                @ViewBag.Erro
             </div>
-        </div>
+        }
+
+        @if (ViewBag.Sucesso != null)
+        {
+            <div class="alert alert-success text-center">
+                @ViewBag.Sucesso
+            </div>
+        }
+
+        <form asp-controller="Conta" asp-action="Esqueciasenha" method="post">
+
+            <div class="mb-3">
+                <label>Email</label>
+
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="Digite seu email"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Nova senha</label>
+
+                <input type="password"
+                       name="novaSenha"
+                       class="form-control"
+                       placeholder="Digite a nova senha"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label>Confirmar senha</label>
+
+                <input type="password"
+                       name="confirmarSenha"
+                       class="form-control"
+                       placeholder="Digite novamente a senha"
+                       required>
+            </div>
+
+            <button type="submit" class="btn btn-rosa w-100">
+                Redefinir senha
+            </button>
+
+            <div class="text-center mt-3">
+
+                <a asp-controller="Conta"
+                   asp-action="Login">
+
+                    Voltar para o login
+
+                </a>
+
+            </div>
+
+        </form>
+
     </div>
+
 </div>

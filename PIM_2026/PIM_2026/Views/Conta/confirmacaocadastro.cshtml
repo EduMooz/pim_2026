@@ -1,17 +1,38 @@
 @{
-    ViewData["Title"] = "Confirmação de cadastro";
+    ViewData["Title"] = "Confirmação de Cadastro";
 }
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
-    <div class="card shadow p-5 text-center" style="max-width: 500px;">
+<div class="container-confirmacao">
 
-        <h2 class="text-success mb-3">Cadastro Confirmado!</h2>
+    <div class="card-confirmacao text-center">
 
-        <p class="mb-4">Seu Cadastro foi realizado com sucesso.</p>
+        <h2 class="titulo-confirmacao mb-3">
+            Cadastro Confirmado!
+        </h2>
 
-        <a asp-action="Login" class="btn btn-primary mt-3">Ir para Login</a>
-        <br />
-        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-warning"> Ir para menu principal </a>
-        
+        <p class="mb-4">
+            Seu cadastro foi realizado com sucesso.
+        </p>
+
+        <div class="d-flex flex-column gap-3">
+
+            <a asp-action="Login"
+               class="btn btn-rosa">
+
+                Ir para Login
+
+            </a>
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="btn btn-outline-rosa">
+
+                Ir para menu principal
+
+            </a>
+
+        </div>
+
     </div>
+
 </div>
