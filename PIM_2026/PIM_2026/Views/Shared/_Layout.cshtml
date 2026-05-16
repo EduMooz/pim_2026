@@ -4,15 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/PIM_2026.styles.css" asp-append-version="true" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Betania+Patmos+In&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Mono&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -71,35 +67,21 @@
 
                         @if (string.IsNullOrEmpty(nome))
                         {
-                            <a class="btn btn-rosa"
-                               asp-controller="Conta"
-                               asp-action="Login">
-                                Entrar
-                            </a>
+                            <a class="btn btn-rosa" asp-controller="Conta" asp-action="Login">Entrar</a>
                         }
                         else
                         {
                             <div class="dropdown">
-                                <button class="btn btn-light dropdown-toggle"
-                                        type="button"
-                                        data-bs-toggle="dropdown">
-                                    @nome
-                                </button>
+                                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">@nome</button>
 
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     <li>
-                                        <a class="dropdown-item"
-                                           asp-controller="Conta"
-                                           asp-action="Logout">
-                                            Sair
-                                        </a>
+                                        <a class="dropdown-item" asp-controller="Conta" asp-action="Logout"><i class="fa-solid fa-right-to-bracket"></i> Sair</a>
                                     </li>
                                 </ul>
                             </div>
                         }
-
                     </div>
-
                 </div>
             </div>
         </nav>

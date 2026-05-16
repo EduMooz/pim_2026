@@ -3,16 +3,10 @@
 }
 
 <div class="container container-login-mobile d-flex justify-content-center align-items-center min-vh-100">
-
     <div class="card-login">
+        <h3 class="text-center mb-3">Redefinir senha</h3>
 
-        <h3 class="text-center mb-3">
-            Redefinir senha
-        </h3>
-
-        <p class="text-muted text-center mb-4">
-            Digite seu email e a nova senha
-        </p>
+        <p class="text-muted text-center mb-4">Digite seu email e a nova senha</p>
 
         @if (ViewBag.Erro != null)
         {
@@ -32,51 +26,24 @@
 
             <div class="mb-3">
                 <label>Email</label>
-
-                <input type="email"
-                       name="email"
-                       class="form-control"
-                       placeholder="Digite seu email"
-                       required>
+                <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
             </div>
 
             <div class="mb-3">
                 <label>Nova senha</label>
-
-                <input type="password"
-                       name="novaSenha"
-                       class="form-control"
-                       placeholder="Digite a nova senha"
-                       required>
+                <input type="password" name="novaSenha" class="form-control" placeholder="Digite a nova senha" required>
             </div>
 
             <div class="mb-3">
                 <label>Confirmar senha</label>
-
-                <input type="password"
-                       name="confirmarSenha"
-                       class="form-control"
-                       placeholder="Digite novamente a senha"
-                       required>
+                <input type="password" name="confirmarSenha" class="form-control" placeholder="Digite novamente a senha" required>
             </div>
 
-            <button type="submit" class="btn btn-rosa w-100">
-                Redefinir senha
-            </button>
+            <button type="submit" class="btn btn-rosa w-100">Redefinir senha</button>
 
             <div class="text-center mt-3">
-
-                <a asp-controller="Conta"
-                   asp-action="Login">
-
-                    Voltar para o login
-
-                </a>
-
+                <a asp-controller="Conta" asp-action="Login">Voltar para o login</a>
             </div>
-
         </form>
-
     </div>
-
 </div>

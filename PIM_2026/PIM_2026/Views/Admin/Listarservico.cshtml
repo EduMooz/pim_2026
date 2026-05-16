@@ -1,12 +1,11 @@
 @{
-    ViewData["Title"] = "Lista de Serviços";
+    ViewData["Title"] = "Serviços";
 }
 
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-        <h2 class="titulo-admin">Serviços Cadastrados</h2>
-        <a asp-action="Cadastroservico" class="btn btn-rosa">Novo Serviço</a>
-
+        <h2 class="titulo-admin"><i class="fa-solid fa-hand-sparkles"></i> Serviços Cadastrados</h2>
+        <a asp-action="Cadastroservico" class="btn btn-rosa"><i class="fa-solid fa-plus"></i> Novo Serviço</a>
     </div>
 
     <div class="card-tabela">
@@ -30,7 +29,7 @@
 
                             <button class="btn btn-sm btn-rosa">Editar</button>
 
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                            <button class="btn btn-sm btn-outline-rosa"><i class="fa-solid fa-trash"></i> Excluir</button>
                         </td>
                     </tr>
 
@@ -41,7 +40,7 @@
                         <td class="text-center botoes-acoes">
                             <button class="btn btn-sm btn-rosa">Editar</button>
 
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                            <button class="btn btn-sm btn-outline-rosa"><i class="fa-solid fa-trash"></i> Excluir</button>
                         </td>
                     </tr>
 
@@ -51,7 +50,7 @@
                         <td>40 minutos</td>
                         <td class="text-center botoes-acoes">
                             <button class="btn btn-sm btn-rosa">Editar</button>
-                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                            <button class="btn btn-sm btn-outline-rosa"><i class="fa-solid fa-trash"></i> Excluir</button>
                         </td>
                     </tr>
                 </tbody>
