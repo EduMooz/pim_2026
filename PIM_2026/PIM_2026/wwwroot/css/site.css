@@ -380,6 +380,10 @@ section {
 /* =========================================
    LOGIN / CADASTRO
 ========================================= */
+.container-formulario {
+    align-items: flex-start;
+    padding-top: 60px;
+}
 
 .card-login {
     background: linear-gradient(135deg, #ffe4ec, #fff8fb);
@@ -539,7 +543,8 @@ section {
 }
 
 .texto-pagina {
-    color: #666;
+    color: #333;
+    font-weight: 500;
 }
 
 .card-meu-agendamento {
