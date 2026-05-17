@@ -47,6 +47,10 @@ namespace PIM_2026.Controllers
         {
             return View();
         }
+        public IActionResult Cadastrarservico()
+        {
+            return View("Salvarservico");
+        }
 
         public IActionResult Horarios()
         {
@@ -71,6 +75,11 @@ namespace PIM_2026.Controllers
         public IActionResult Cadastrohorario()
         {
             return View();
+        }
+
+        public IActionResult Cadastrarhorario()
+        {
+            return View("Salvarhorario");
         }
 
         public IActionResult Salvarhorario()

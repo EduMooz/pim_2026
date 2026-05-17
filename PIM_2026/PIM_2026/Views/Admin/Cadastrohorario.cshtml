@@ -37,7 +37,7 @@
 
             <!-- BOTÕES -->
             <div class="d-flex gap-2 botoes-acoes">
-                <a asp-controller="Admin" asp-action="Salvarhorario" class="btn btn-rosa w-100">Salvar</a>
+                <button type="submit" class="btn btn-rosa w-100">Salvar</button>
                 <a asp-controller="Admin" asp-action="Horarios" class="btn btn-outline-rosa w-100">Cancelar</a>
             </div>
         </form>
@@ -61,7 +61,7 @@
 
     horaFim.addEventListener("change", function () {
 
-        if (horaInicio.value !== "" & horaFim.value !== ""){
+        if (horaInicio.value !== "" && horaFim.value !== ""){
             if (horaFim.value <= horaInicio.value) {
 
             alert("O horário final deve ser maior que o horário inicial.");

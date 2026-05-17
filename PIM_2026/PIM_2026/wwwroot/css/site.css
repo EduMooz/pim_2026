@@ -1,7 +1,4 @@
-/* =========================================
-   CSS PADRÃO DO ASP.NET
-========================================= */
-
+/* CSS padrão do ASP.net */
 html {
     font-size: 14px;
     position: relative;
@@ -28,10 +25,7 @@ html {
 }
 
 
-/* =========================================
-   BASE DO PROJETO
-========================================= */
-
+/*BASE DO PROJETO*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -73,9 +67,7 @@ main {
 }
 
 
-/* =========================================
-   NAVBAR
-========================================= */
+/*Barra de navegação*/
 
 .navbar-custom {
     background: linear-gradient(135deg, #ffe4ec, #fff8fb);
@@ -155,9 +147,7 @@ main {
     }
 
 
-/* =========================================
-   BOTÕES
-========================================= */
+/*Botões*/
 
 .btn-rosa {
     background: #d97b93;
@@ -189,9 +179,7 @@ main {
     }
 
 
-/* =========================================
-   HOME - HERO
-========================================= */
+/*Tela Home*/
 
 .hero {
     text-align: center;
@@ -217,11 +205,6 @@ main {
         margin-top: 20px;
     }
 
-
-/* =========================================
-   HOME - SEÇÕES GERAIS
-========================================= */
-
 section {
     margin-bottom: 60px;
 }
@@ -237,11 +220,6 @@ section {
         color: #666;
         font-size: 1.4rem;
     }
-
-
-/* =========================================
-   HOME - SERVIÇOS
-========================================= */
 
 .servicos {
     text-align: center;
@@ -295,11 +273,6 @@ section {
         color: #444;
         font-size: 1.2rem;
     }
-
-
-/* =========================================
-   HOME - LOCALIZAÇÃO
-========================================= */
 
 .localizacao {
     background: linear-gradient(135deg, #ffe4ec, #fff8fb);
@@ -377,9 +350,7 @@ section {
     }
 
 
-/* =========================================
-   LOGIN / CADASTRO
-========================================= */
+/* Tela de Login/Cadastro*/
 .container-formulario {
     align-items: flex-start;
     padding-top: 60px;
@@ -393,7 +364,6 @@ section {
     max-width: 430px;
     border: 1px solid rgba(255,255,255,0.4);
     box-shadow: 0 10px 30px rgba(217,123,147,0.15), 0 4px 12px rgba(0,0,0,0.05);
-    backdrop-filter: blur(10px);
     transition: 0.3s;
 }
 
@@ -438,10 +408,7 @@ section {
             }
 
 
-/* =========================================
-   AGENDAMENTO
-========================================= */
-
+/*Tela de agendamento*/
 .card-agendamento {
     background: linear-gradient(135deg, #ffe4ec, #fff8fb);
     border-radius: 28px;
@@ -501,10 +468,7 @@ section {
 }
 
 
-/* =========================================
-   CONFIRMAÇÃO
-========================================= */
-
+/* Telas de confirmação (agendamento e cadastro de serviço/horario*/
 .container-confirmacao {
     min-height: calc(100vh - 140px);
     display: flex;
@@ -529,10 +493,7 @@ section {
 }
 
 
-/* =========================================
-   MEUS AGENDAMENTOS
-========================================= */
-
+/*Tela Meus Agendamentos*/
 .container-agendamentos {
     padding: 40px 15px;
 }
@@ -612,10 +573,7 @@ section {
     }
 
 
-/* =========================================
-   AGENDA DIÁRIA
-========================================= */
-
+/*Tela Agenda diária*/
 .card-agenda {
     background: linear-gradient(135deg, #ffe4ec, #fff8fb);
     border-radius: 24px;
@@ -680,10 +638,7 @@ section {
 }
 
 
-/* =========================================
-   ADMIN
-========================================= */
-
+/* Telas do Admin*/
 .titulo-admin {
     color: #c2185b;
     font-weight: 700;
@@ -732,9 +687,7 @@ section {
     }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+/*Footer*/
 
 .footer {
     position: static !important;
@@ -748,9 +701,7 @@ section {
 }
 
 
-/* =========================================
-   RESPONSIVIDADE - TABLET
-========================================= */
+/*Responsividade*/
 
 @media (max-width: 992px) {
 
@@ -787,11 +738,6 @@ section {
         align-items: center;
     }
 }
-
-
-/* =========================================
-   RESPONSIVIDADE - MOBILE
-========================================= */
 
 @media (max-width: 768px) {
 
@@ -900,8 +846,7 @@ section {
         margin-top: 5px;
     }
 
-    .btn-rosa,
-    .mobile-full {
+    .btn-rosa{
         width: 100%;
     }
 
@@ -1030,11 +975,6 @@ section {
             margin-bottom: 0;
         }
 }
-
-
-/* =========================================
-   RESPONSIVIDADE - CELULAR PEQUENO
-========================================= */
 
 @media (max-width: 480px) {
 
